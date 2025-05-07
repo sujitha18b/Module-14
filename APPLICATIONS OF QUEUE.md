@@ -1,12 +1,12 @@
-# Exp.No:40  
+# Exp.No: 14 A
 ## APPLICATIONS OF QUEUE
 
----
+
 
 ### AIM  
 To write a Python program to implement CPU Process Scheduling using a queue.
 
----
+
 
 ### ALGORITHM  
 
@@ -27,16 +27,60 @@ To write a Python program to implement CPU Process Scheduling using a queue.
 13. Call `CalculateWaitingTime()` with `at`, `bt`, and `N`.  
 14. End the program.
 
----
 
 ### PROGRAM  
 
-```
+def CalculateWaitingTime(at, bt, N): <br />
 
-```
+
+wt = [0]*N; <br />
+
+wt[0] = 0; <br />
+
+print("P.No.\tArrival Time\t" , "Burst Time\tWaiting Time"); <br />
+	print("1" , "\t\t" , at[0] , "\t\t" , bt[0] , "\t\t" , wt[0]); <br />
+
+
+for i in range(1,5): <br />
+		wt[i] = (at[i - 1] + bt[i - 1] + wt[i - 1]) - at[i]; <br />
+
+print(i + 1 , "\t\t" , at[i] , "\t\t" , bt[i] , "\t\t" , wt[i]); <br />
+	
+
+sum = 0; <br />
+
+	
+for i in range(5): <br />
+		sum = sum + wt[i]; <br />
+	
+
+average = sum / 5; <br />
+
+	
+print("Average waiting time = " , average); <br />
+
+
+
+N = 5; <br />
+
+	
+at = [ 0, 1, 2, 3, 4 ]; <br />
+
+	
+bt=[] <br />
+for i in range(0, 5): <br />
+    ele = int(input()) <br />
+    bt.append(ele) <br />
+	
+
+	
+CalculateWaitingTime(at, bt, N); 
+
 
 ### OUTPUT
 
+![Screenshot 2025-05-07 110305](https://github.com/user-attachments/assets/8451b385-feba-4ad6-8a7b-ceaaea487723)
+
 
 ### RESULT
-
+ Thus , the given python program is implemented and executed sucessfully.
